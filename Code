@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+	body{
+		text-align: center ;
+	}
+		.btn{
+             color: red; 
+             text-decoration: none;
+             text-transform: uppercase;
+             display: inline-block;
+             padding: 0;
+             position: relative;
+
+		}
+		.btn span{
+			display: block;
+			padding: 10px 13px;
+			position: relative;
+			
+		}
+		.btn::before,.btn::after,.btn span::before,.btn span::after{
+			content: "";
+			background: red;
+			position: absolute;
+			top: 0;
+			left: 0;
+			transition: all 0.5s ease;
+		}
+		.btn::before,.btn::after{
+			width: 2px;
+			height: 0;
+		}
+		.btn span::before,.btn span::after{
+			width: 0;
+			height: 2px;
+			transition-delay: 0.5s;
+		}
+		.btn::after{
+			top: auto;
+			left: auto;
+			right: 0;
+			bottom: 0;
+		}
+		.btn:hover::after,.btn:hover::before{
+            height: 100%;
+
+		}
+		.btn span::before{
+           right:0 ;
+           left: auto;
+		}
+		.btn span::after{
+          top: auto;
+          bottom: 0;
+         
+		}
+.btn span:hover::after,.btn span:hover::before{
+          width: 100%;
+		}
+
+
+	</style>
+</head>
+<body>
+	<a href="" class="btn"><span>click me</span></a>
+
+</body>
+</html>
